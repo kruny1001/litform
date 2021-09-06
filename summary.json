@@ -1,0 +1,85 @@
+
+[
+  
+  {
+    "type": "input",
+    "inputType": {
+      "text": {},
+      "number": {
+        "min": "number",
+        "max": "number"
+      },
+      "textarea": {
+        "max": "number"
+      },
+      "password": {},
+      "email": {}
+    },
+    "label": "string",
+    "model": "any",
+    "readonly": "boolean",
+    "required": "boolean",
+    "validator": "string, function",
+    "placeholder": "string",
+    "hintText": "string"
+  },
+  
+  {
+    "type": "file",
+    "inputType": ["single", "multiple"],
+    "label": "string",
+    "contentType": ["txt", "png", "jpeg", "...", "jpg"],
+    "drag": "boolean",
+    "preview": "boolean",
+    "model": "string",
+    "validator": "string, function"
+  },
+
+  {
+    "type": "select",
+    "inputType": "drop",
+    "label": "string",
+    "options": [
+      {"label": "string",  "value": "string or number" }
+    ],
+    "validator": "string, function",
+    "model": "any",
+    "placeholder": "string",
+    "hintText": "string",
+    "readonly": "boolean",
+    "required": "boolean"
+  },
+
+  {
+    "type": "checkbox",
+    "inputType": [ "normal", "grid", "list" ],
+    "label": "string",
+    "options": [
+      { "label": "string", 
+        "value": "string or number",
+        "image": "string(not required)"
+      }
+    ],
+    "model": "any",
+    "required": "boolean",
+    "validator": "string, function"
+  },
+
+  {
+    "type": "radio",
+    "label": "string",
+    "inputType": [
+      "normal", "grid", "list" 
+    ],
+    "options": [
+      { "label": "string", 
+        "value": "string or number",
+        "image": "string(not required)"
+      }
+    ],
+    "model": "any",
+    "required": "boolean",
+    "validator": "string, function"
+  }
+]
+
