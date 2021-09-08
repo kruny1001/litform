@@ -5,6 +5,8 @@
 //- RadioGrid(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 //- RadioList(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 //- RadioNormal(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+div(style="width: 300px;")
+  SelectDrop(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 SelectInput(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 pre {{ radio}}
 </template>
@@ -16,6 +18,7 @@ import CheckboxGrid from './components/checkbox/CheckboxGrid.vue'
 import RadioGrid from './components/radio/RadioGrid.vue'
 import RadioList from './components/radio/RadioList.vue'
 import RadioNormal from './components/radio/RadioNormal.vue'
+import SelectDrop from './components/select/SelectDrop.vue'
 import SelectInput from './components/select/SelectInput.vue'
 
 export default {
@@ -27,6 +30,7 @@ export default {
     RadioGrid,
     RadioList,
     RadioNormal,
+    SelectDrop,
     SelectInput,
   },
   data() {
