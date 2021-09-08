@@ -1,8 +1,9 @@
 <template lang="pug">
+.label {{ label}}
 .checkbox-container
   .item-area(v-for="opt, idx in optionExt" :key="opt.value")
     .item(@click="() => toggleSelect(opt)")
-      .circle(:class="{selected: opt.selected}")
+      .checkbox(:class="{selected: opt.selected}")
       .image {{ opt.image}}
       .label {{ opt.label}}
 
@@ -48,23 +49,25 @@ export default defineComponent({
   user-select: none;
 }
 
-.circle {
+.checkbox {
   position: relative;
   width: 1rem;
   height: 1rem;
   margin-right: 8px;
-  border: 1px solid grey;
+  outline: 1px solid grey;
   background-color: white;
   vertical-align: 0px;
 }
 
-.circle.selected::after {
+.checkbox.selected::after {
   content: '';
   position: absolute;
   width: 80%;
   height: 80%;
   background-color: yellowgreen;
-  transform: translate(13%, 15%);
+  transform: translate(12.5%, 15%);
+  /* transform calculated arbitrary */
+  transform-origin: center;
 }
 
 @media only screen and (max-width: 600px) {

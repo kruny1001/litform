@@ -1,5 +1,6 @@
 <template lang="pug">
 
+.labal {{ label }}
 .radio-container
   .item-area(v-for="opt, idx in optionExt" :key="opt.value")
     .item(@click="() => toggleSelect(opt)")
@@ -66,7 +67,7 @@ export default defineComponent({
   height: 80%;
   border-radius: 100%;
   background-color: yellowgreen;
-  transform: translate(13%, 15%);
+  transform: translate(12.5%, 15%);
 }
 
 @media only screen and (max-width: 600px) {

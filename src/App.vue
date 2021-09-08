@@ -1,10 +1,12 @@
 <template lang="pug">
-CheckboxGrid(v-bind="checkbox" @data-update="(evt) => handleUpdate(evt, checkbox)")
-CheckboxList(v-bind="checkbox" @data-update="(evt) => handleUpdate(evt, checkbox)")
-CheckboxNormal(v-bind="checkbox" @data-update="(evt) => handleUpdate(evt, checkbox)")
-RadioGrid(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
-RadioList(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
-RadioNormal(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+//- CheckboxGrid(v-bind="checkbox" @data-update="(evt) => handleUpdate(evt, checkbox)")
+//- CheckboxList(v-bind="checkbox" @data-update="(evt) => handleUpdate(evt, checkbox)")
+//- CheckboxNormal(v-bind="checkbox" @data-update="(evt) => handleUpdate(evt, checkbox)")
+//- RadioGrid(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+//- RadioList(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+//- RadioNormal(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+SelectInput(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+pre {{ radio}}
 </template>
 
 <script>
@@ -14,6 +16,7 @@ import CheckboxGrid from './components/checkbox/CheckboxGrid.vue'
 import RadioGrid from './components/radio/RadioGrid.vue'
 import RadioList from './components/radio/RadioList.vue'
 import RadioNormal from './components/radio/RadioNormal.vue'
+import SelectInput from './components/select/SelectInput.vue'
 
 export default {
   name: 'App',
@@ -24,6 +27,7 @@ export default {
     RadioGrid,
     RadioList,
     RadioNormal,
+    SelectInput,
   },
   data() {
     return {

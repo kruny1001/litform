@@ -1,4 +1,5 @@
 <template lang="pug">
+.label {{ label}}
 .checkbox-container
   .item-area(v-for="opt, idx in optionExt" :key="opt.value")
     .item(@click="() => toggleSelect(opt)")
@@ -65,7 +66,7 @@ export default defineComponent({
   width: 80%;
   height: 80%;
   background-color: yellowgreen;
-  transform: translate(13%, 15%);
+  transform: translate(12.5%, 15%);
 }
 
 @media only screen and (max-width: 600px) {
