@@ -8,18 +8,41 @@
 //- div(style="width: 300px;")
 //-   SelectDrop(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 //- SelectInput(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
-pre {{ radio}}
+
+//- InputNormal( v-bind="input")
+
+component( 
+  v-for="val in template" 
+  :is="val.compName" 
+  :value="user[val.modelKey]"
+  v-bind="val"
+  @data-update="userUpdate"
+)
+
+pre {{ user }}
+//- pre {{ radio}}
+
+
 </template>
 
 <script>
 import CheckboxList from './components/checkbox/CheckboxList.vue'
 import CheckboxNormal from './components/checkbox/CheckboxNormal.vue'
 import CheckboxGrid from './components/checkbox/CheckboxGrid.vue'
+
 import RadioGrid from './components/radio/RadioGrid.vue'
 import RadioList from './components/radio/RadioList.vue'
 import RadioNormal from './components/radio/RadioNormal.vue'
+
 import SelectDrop from './components/select/SelectDrop.vue'
 import SelectInput from './components/select/SelectInput.vue'
+
+import InputNormal from './components/input/InputNormal.vue'
+import InputNumber from './components/input/InputNumber.vue'
+import InputEmail from './components/input/InputEmail.vue'
+import InputPassword from './components/input/InputPassword.vue'
+import InputTextarea from './components/input/InputTextarea.vue'
+
 
 export default {
   name: 'App',
@@ -32,6 +55,12 @@ export default {
     RadioNormal,
     SelectDrop,
     SelectInput,
+
+    InputNormal,
+    InputNumber,
+    InputEmail,
+    InputPassword,
+    InputTextarea,
   },
   data() {
     return {
@@ -86,13 +115,95 @@ export default {
         required: false,
         validator: [],
       },
+      user: {
+        id: 1,
+        name: 'John Doe',
+        password: 'J0hnD03!x4',
+        email: 'john.doe@gmail.com',
+        desc: 'asdasdokqwpodkqpowk'
+      },
+      template: [
+        {
+          type: 'input',
+          inputType: "number",
+          label: "",
+          modelKey: "id",
+          readonly: false,
+          required: false,
+          validator: [],
+          placeholder: "",
+          hintText: "",
+
+          compName: 'InputNumber',
+        },
+        {
+          type: 'input',
+          inputType: "text",
+          label: "",
+          modelKey: "name",
+          readonly: false,
+          required: false,
+          validator: [],
+          placeholder: "자기소개",
+          hintText: "",
+
+          compName: 'InputNormal',
+        },
+        {
+          type: 'input',
+          inputType: "password",
+          label: "",
+          value: "",
+          modelKey: "password",
+          readonly: false,
+          required: false,
+          validator: [],
+          placeholder: "자기소개",
+          hintText: "",
+
+          compName: 'InputPassword',
+        },
+        {
+          type: 'input',
+          inputType: "email",
+          label: "",
+          value: "",
+          modelKey: "email",
+          readonly: false,
+          required: false,
+          validator: [],
+          placeholder: "",
+          hintText: "",
+
+          compName: 'InputEmail',
+        },
+        {
+          type: 'input',
+          inputType: "textarea",
+          label: "",
+          value: "",
+          modelKey: "desc",
+          readonly: false,
+          required: false,
+          validator: [],
+          placeholder: "자기소개",
+          hintText: "",
+
+          compName: 'InputTextarea',
+        },
+      ],
     }
   },
   methods: {
     handleUpdate({ key, newVal }, target) {
       target.value = newVal
     },
+
+    userUpdate({ key, newVal }) {
+      this.user[key] = newVal
+    }
   },
+
 }
 </script>
 

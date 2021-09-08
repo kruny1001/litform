@@ -1,6 +1,4 @@
-
 [
-  
   {
     "type": "input",
     "inputType": {
@@ -16,7 +14,7 @@
       "email": {}
     },
     "label": "string",
-    "model": "any",
+    "modelKey": "any",
     "readonly": "boolean",
     "required": "boolean",
     "validator": "string, function",
@@ -31,7 +29,7 @@
     "contentType": ["txt", "png", "jpeg", "...", "jpg"],
     "drag": "boolean",
     "preview": "boolean",
-    "model": "string",
+    "modelKey": "string",
     "validator": "string, function"
   },
 
@@ -43,7 +41,7 @@
       {"label": "string",  "value": "string or number" }
     ],
     "validator": "string, function",
-    "model": "any",
+    "modelKey": "any",
     "placeholder": "string",
     "hintText": "string",
     "readonly": "boolean",
@@ -60,7 +58,7 @@
         "image": "string(not required)"
       }
     ],
-    "model": "any",
+    "modelKey": "any",
     "required": "boolean",
     "validator": "string, function"
   },
@@ -77,7 +75,7 @@
         "image": "string(not required)"
       }
     ],
-    "model": "any",
+    "modelKey": "any",
     "required": "boolean",
     "validator": "string, function"
   }
