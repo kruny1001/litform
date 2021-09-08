@@ -5,9 +5,9 @@
 //- RadioGrid(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 //- RadioList(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 //- RadioNormal(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
-div(style="width: 300px;")
-  SelectDrop(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
-SelectInput(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+//- div(style="width: 300px;")
+//-   SelectDrop(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
+//- SelectInput(v-bind="radio" @data-update="(evt) => handleUpdate(evt, radio)")
 pre {{ radio}}
 </template>
 

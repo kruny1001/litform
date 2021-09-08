@@ -1,10 +1,11 @@
 import { computed, toRefs } from 'vue'
+import { updateModel } from '../modelUtil'
 
 export function setupCheckbox(props, ctx) {
   let { value, options, modelKey } = toRefs(props)
 
   function updateValue(newVal) {
-    ctx.emit('data-update', { key: modelKey.value, newVal })
+    updateModel(ctx, modelKey.value, newVal)
   }
   function toggleSelect(opt) {
     const _value = value.value

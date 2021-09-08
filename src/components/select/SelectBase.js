@@ -1,10 +1,10 @@
 import { computed, toRefs } from 'vue'
-
+import { updateModel } from '../modelUtil'
 export function setupSelect(props, ctx) {
   let { value, options, modelKey } = toRefs(props)
 
   function updateValue(newVal) {
-    ctx.emit('data-update', { key: modelKey.value, newVal })
+    updateModel(ctx, modelKey.value, newVal)
   }
 
   function handleSelect(opt) {
