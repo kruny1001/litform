@@ -4,7 +4,8 @@
   .item-area(v-for="opt, idx in optionExt" :key="opt.value")
     .item(@click="() => toggleSelect(opt)")
       .checkbox(:class="{selected: opt.selected}")
-      .image {{ opt.image}}
+      .image
+        img(:src="opt.image") 
       .label {{ opt.label}}
 
 </template>
@@ -48,6 +49,15 @@ export default defineComponent({
   align-items: center;
   cursor: pointer;
   user-select: none;
+}
+
+.image {
+  height: 1em;
+  margin-right: 8px;
+}
+
+.image img {
+  height: 100%;
 }
 
 .checkbox {

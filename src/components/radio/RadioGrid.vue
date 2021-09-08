@@ -3,7 +3,8 @@
 .grid
   .select-box(v-for="opt, idx in optionExt" :key="opt.value")
     .card(:class="{selected: opt.selected}" @click="() => toggleSelect(opt)")
-      .image {{ opt.image}}
+      .image
+        img(:src="opt.image") 
       .label {{ opt.label}}
 
 </template>
