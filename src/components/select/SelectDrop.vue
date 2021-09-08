@@ -49,7 +49,6 @@ export default defineComponent({
       this.open = !this.open
     },
     clickOption(opt) {
-      console.log(opt)
       this.handleSelect(opt)
       this.closeMenu()
     },
